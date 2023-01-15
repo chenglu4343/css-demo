@@ -2,10 +2,8 @@
   <h1>Demo1</h1>
   <div class="color-container">
     <div v-for="(color, index) of red" :key="color" class="color-item" :style="{
-      '--bg-color': color,
-      '--text-color': index >= 5 ? 'white' : 'rgba(0,0,0,0.85)',
-      backgroundColor: 'var(--bg-color)',
-      color: 'var(--text-color)',
+      backgroundColor: color,
+      color: index >= 5 ? 'white' : 'rgba(0,0,0,0.85)',
     }">
       <span class="color-text">red-{{ index }}</span>
       <span class="color-value">{{ color }}</span>
@@ -31,7 +29,7 @@ import { red } from '@ant-design/colors'
 
 .color-container:hover .color-value {
   left: 0;
-  color: var(--text-color)
+  opacity: .7;
 }
 
 .color-item {
@@ -49,10 +47,9 @@ import { red } from '@ant-design/colors'
 }
 
 .color-value {
-  opacity: 0.7;
+  opacity: 0;
   transition: all var(--transition-duration);
   position: relative;
   left: var(--left-width);
-  color: var(--bg-color);
 }
 </style>
